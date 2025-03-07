@@ -53,12 +53,12 @@ CREATE TABLE Worker (
 
 ~~~
 CREATE TABLE Contract (
-                          ContractId INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-                          ContractValuePerHour DOUBLE,
-                          ContractTotalHours INT,
-                          ContractDate DATE,
-                          WorkerId INT,
-                          CONSTRAINT WorkerId_fk FOREIGN KEY (WorkerId)
-                              REFERENCES worker (WorkerId)
+    ContractId INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    ContractValuePerHour DOUBLE,
+    ContractTotalHours INT,
+    ContractDate DATE,
+    WorkerId INT,
+    CONSTRAINT WorkerId_fk FOREIGN KEY (WorkerId)
+      REFERENCES worker (WorkerId)
 )
 ~~~
