@@ -32,18 +32,16 @@ create table Company(CompanyId int auto_increment primary key,
 
 ~~~
 create table Department(DepartmentId int auto_increment primary key,
-    DepartmentName varchar(20),
-    CompanyId int,
-    CONSTRAINT fk_CompanyId FOREIGN KEY (CompanyId)
-        REFERENCES company (CompanyId)
+    DepartmentName varchar(20));
 ~~~
 
 ~~~
 create table WorkLevel(WorkLevelId int auto_increment primary key,
-    WorkerLevelName varchar(20));
+    WorkerLevelName varchar(20)
     CompanyId int,
-    CONSTRAINT fk_CompanyId FOREIGN KEY (CompanyId)
-        REFERENCES company (CompanyId)
+     CONSTRAINT WorkLevelCompanyId_fk FOREIGN KEY (CompanyId)
+        REFERENCES company (CompanyId));
+    
 ~~~
 
 ~~~
