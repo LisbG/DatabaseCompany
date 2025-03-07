@@ -26,18 +26,18 @@ create database CompanyModel;
 
 ~~~
 create table Company(CompanyId int auto_increment primary key,
-CompanyName varchar(80),
-CompanyEmail varchar(100));
+    CompanyName varchar(80),
+    CompanyEmail varchar(100));
 ~~~
 
 ~~~
 create table Department(DepartmentId int auto_increment primary key,
-DepartmentName varchar(20));
+    DepartmentName varchar(20));
 ~~~
 
 ~~~
 create table WorkLevel(WorkLevelId int auto_increment primary key,
-WorkerLevelName varchar(20));
+    WorkerLevelName varchar(20));
 ~~~
 
 ~~~
