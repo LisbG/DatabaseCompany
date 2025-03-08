@@ -26,18 +26,22 @@ create database CompanyModel;
 
 ~~~
 create table Company(CompanyId int auto_increment primary key,
-CompanyName varchar(80),
-CompanyEmail varchar(100));
+    CompanyName varchar(80),
+    CompanyEmail varchar(100));
 ~~~
 
 ~~~
 create table Department(DepartmentId int auto_increment primary key,
-DepartmentName varchar(20));
+    DepartmentName varchar(20));
 ~~~
 
 ~~~
 create table WorkLevel(WorkLevelId int auto_increment primary key,
-WorkerLevelName varchar(20));
+    WorkerLevelName varchar(20)
+    CompanyId int,
+     CONSTRAINT WorkLevelCompanyId_fk FOREIGN KEY (CompanyId)
+        REFERENCES company (CompanyId));
+    
 ~~~
 
 ~~~
@@ -53,12 +57,12 @@ CREATE TABLE Worker (
 
 ~~~
 CREATE TABLE Contract (
-                          ContractId INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-                          ContractValuePerHour DOUBLE,
-                          ContractTotalHours INT,
-                          ContractDate DATE,
-                          WorkerId INT,
-                          CONSTRAINT WorkerId_fk FOREIGN KEY (WorkerId)
-                              REFERENCES worker (WorkerId)
+    ContractId INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    ContractValuePerHour DOUBLE,
+    ContractTotalHours INT,
+    ContractDate DATE,
+    WorkerId INT,
+    CONSTRAINT WorkerId_fk FOREIGN KEY (WorkerId)
+      REFERENCES worker (WorkerId)
 )
 ~~~
