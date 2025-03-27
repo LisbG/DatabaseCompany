@@ -1,26 +1,20 @@
 package com.lisboa.databasecompany.application;
 
-import com.lisboa.databasecompany.model.entities.Company;
+import com.lisboa.databasecompany.model.entities.QueryModel;
 
 public class Main {
     public static void main(String[] args) {
 
-        StringBuilder stringBuilder = new StringBuilder();
-
-        stringBuilder.append("Valor 1, ");
-        stringBuilder.append("Valor 1, ");
-        stringBuilder.append("Valor 1");
-
-        Company company = new Company();
-
         StringBuilder values = new StringBuilder();
-        values.append("Planta;");
-        values.append("planta@gmail.com;");
 
-//        System.out.println("String: " + String.valueOf(values) + "teste");
+        values.append("company;");
+        values.append("companyName");
+        values.append("eu te amo");
+        values.append("companyId");
+        values.append("2");
 
-        company.readRegisters();
 
+        QueryModel.updateModel("company", values);
 
     }
 }

@@ -15,7 +15,6 @@ public class Worker extends CrudMethods {
 
         String[] valuesSplit = values.toString().split(";");
 
-        System.out.println(valuesSplit[1].getClass());
         String insertQuery = String.format("Insert into %s (%s) values ('%s', %s, %s)",
                 tableName,
                 String.valueOf(fields),
@@ -24,6 +23,7 @@ public class Worker extends CrudMethods {
                 valuesSplit[2]
         );
         super.executeQuery(insertQuery);
+//        System.out.println(insertQuery);
     }
 
     @Override

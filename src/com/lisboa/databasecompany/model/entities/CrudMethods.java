@@ -29,10 +29,11 @@ public abstract class CrudMethods implements CRUD {
         }
     }
 
-    public void executeSelect(String query, String tableName) {
-
+    public void executeSelect(String tableName) {
+        
         if (connection != null) {
             try {
+                String query = String.format("select * from %s", tableName);
                 preparedStatement = connection.prepareStatement(query);
 
                 ResultSet resultSet = preparedStatement.executeQuery();

@@ -25,6 +25,11 @@ public class Company extends CrudMethods {
 
     @Override
     public void updateRegister(StringBuilder values) {
+
+        String[] valuesSplit = values.toString().split(";");
+        String updateQuery = String.format("Update %s set %s = %s where %s = %s",
+                tableName,
+                valuesSplit[0]);
         super.executeQuery("");
     }
 
@@ -36,8 +41,7 @@ public class Company extends CrudMethods {
     @Override
     public void readRegisters() {
 
-        String query = String.format("select * from %s", tableName);
-        super.executeSelect(query, tableName);
+        super.executeSelect(tableName);
     }
 }
 
